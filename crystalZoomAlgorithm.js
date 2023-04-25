@@ -37,13 +37,14 @@
 
         consecutiveKeys.forEach((key, index) => {
           let list = dictionary[key];
+          let crystalZoomIndex = list.indexOf("crystalzoom");
 
-          if (crystalzoomIndex !== -1) {
+          if (crystalZoomIndex !== -1) {
             crystalzoomCount++;
             if (firstKeyWithCrystalzoom === null) {
               firstKeyWithCrystalzoom = key;
             } else {
-              list.splice(crystalzoomIndex, 1);
+              list.splice(crystalZoomIndex, 1);
               if (list.length === 0) {
                 delete dictionary[key];
               }
